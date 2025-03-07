@@ -9,7 +9,13 @@ const PORT = 5001;
 const DATA_FILE = path.join(__dirname, "shoppingList.json");
 
 // 미들웨어 설정
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://shopping-list-client-1wyzsyyxg-mchoi2000s-projects.vercel.app",
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 // 초기 데이터 파일이 없으면 생성
